@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Editar perfil{% endblock %}
+{% block content %}
+<h2>Editar perfil</h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <h5>Datos de usuario</h5>
+  {{ uform.as_p }}
+  <h5 class="mt-3">Perfil</h5>
+  {{ pform.as_p }}
+  <button class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

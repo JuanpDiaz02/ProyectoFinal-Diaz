@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Mensaje{% endblock %}
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h3>{{ msg.subject }}</h3>
+  <p class="text-muted small">De: {{ msg.sender }} | Para: {{ msg.receiver }} | {{ msg.sent_at }}</p>
+  <hr>
+  <p>{{ msg.body|linebreaks }}</p>
+  <hr>
+  <a class="btn btn-secondary" href="{% url 'messaging:inbox' %}">Volver</a>
+  <a class="btn btn-outline-danger" href="{% url 'messaging:delete' msg.pk %}">Borrar</a>
+</div>
+{% endblock %}

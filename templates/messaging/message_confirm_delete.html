@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Borrar mensaje{% endblock %}
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h3>¿Borrar este mensaje?</h3>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Sí, borrar</button>
+    <a class="btn btn-secondary" href="{% url 'messaging:inbox' %}">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

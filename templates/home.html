@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Inicio | Mi Blog{% endblock %}
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h1 class="mb-3">Bienvenido a Mi Blog</h1>
+  <p class="lead">Usá la barra de navegación para ir a “Pages”, “Mensajes” o “Acerca de”.</p>
+  <a class="btn btn-primary" href="{% url 'pages:page_list' %}">Ver Pages</a>
+</div>
+{% endblock %}

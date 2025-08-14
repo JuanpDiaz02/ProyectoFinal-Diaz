@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h2>{{ object.title }}</h2>
+  {% if object.subtitle %}<p class="text-muted">{{ object.subtitle }}</p>{% endif %}
+  {% if object.cover %}<img src="{{ object.cover.url }}" class="img-fluid rounded mb-3">{% endif %}
+  <div>{{ object.content|safe }}</div>
+  <hr>
+  {% if user == object.author %}
+    <a class="btn btn-outline-primary" href="{% url 'pages:page_edit' object.pk %}">Editar</a>
+    <a class="btn btn-outline-danger" href="{% url 'pages:page_delete' object.pk %}">Borrar</a>
+  {% endif %}
+  <a class="btn btn-secondary" href="{% url 'pages:page_list' %}">Volver</a>
+</div>
+{% endblock %}

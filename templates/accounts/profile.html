@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+<h2>Mi perfil</h2>
+<div class="d-flex gap-4 align-items-center">
+  {% if request.user.profile.avatar %}
+    <img src="{{ request.user.profile.avatar.url }}" class="rounded" style="width:120px;height:120px;object-fit:cover;">
+  {% endif %}
+  <div>
+    <p><strong>Usuario:</strong> {{ request.user.username }}</p>
+    <p><strong>Nombre:</strong> {{ request.user.first_name }} {{ request.user.last_name }}</p>
+    <p><strong>Email:</strong> {{ request.user.email }}</p>
+    {% if request.user.profile.website %}<p><strong>Web:</strong> <a href="{{ request.user.profile.website }}" target="_blank">{{ request.user.profile.website }}</a></p>{% endif %}
+    {% if request.user.profile.birthdate %}<p><strong>Nacimiento:</strong> {{ request.user.profile.birthdate }}</p>{% endif %}
+    {% if request.user.profile.bio %}<p><strong>Bio:</strong> {{ request.user.profile.bio }}</p>{% endif %}
+  </div>
+</div>
+<hr>
+<a class="btn btn-outline-primary" href="{% url 'accounts:profile_edit' %}">Editar perfil</a>
+<a class="btn btn-outline-secondary" href="{% url 'accounts:password_change' %}">Cambiar contraseña</a>
+{% endblock %}

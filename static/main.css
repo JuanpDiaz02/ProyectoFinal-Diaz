@@ -1,0 +1,26 @@
+body{background:#f5f7fb}
+.navbar-brand{letter-spacing:.3px}
+img.rounded{border-radius:12px}
+
+/* static/css/main.css */
+:root{
+  --radius: 12px;
+}
+.bg-white{
+  background: #fff;
+}
+.card{
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+.btn{
+  border-radius: 8px;
+}
+.navbar-brand{
+  font-weight: 700;
+  letter-spacing:.3px;
+}
+img.rounded{
+  border-radius: var(--radius) !important;
+}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Enviados{% endblock %}
+{% block content %}
+<h2 class="mb-3">Enviados</h2>
+<a class="btn btn-primary mb-3" href="{% url 'messaging:compose' %}">Nuevo mensaje</a>
+{% if messages_list %}
+  <ul class="list-group">
+    {% for m in messages_list %}
+      <li class="list-group-item">
+        <a href="{% url 'messaging:detail' m.pk %}"><strong>{{ m.subject }}</strong></a>
+        <div class="small text-muted">Para: {{ m.receiver }} | {{ m.sent_at }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="alert alert-info">No tenés mensajes enviados.</div>
+{% endif %}
+{% endblock %}
