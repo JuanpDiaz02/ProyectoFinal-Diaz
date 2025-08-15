@@ -14,12 +14,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Apps del proyecto
     'accounts',
     'pages',
     'messaging',
 
-    # Librerías extra
     'ckeditor',
 ]
 
@@ -38,7 +36,7 @@ ROOT_URLCONF = 'finalblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # carpeta templates en el raíz
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,3 +81,4 @@ LOGIN_REDIRECT_URL = 'pages:page_list'
 LOGOUT_REDIRECT_URL = 'home'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
