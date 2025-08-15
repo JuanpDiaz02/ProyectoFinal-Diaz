@@ -5,7 +5,6 @@ from django.urls import reverse_lazy
 from .models import Page
 from .forms import PageForm
 
-# Mixin de autorización: solo el autor puede editar/borrar
 class AuthorRequiredMixin:
     def dispatch(self, request, *args, **kwargs):
         obj = self.get_object()
@@ -50,3 +49,4 @@ class PageDeleteView(LoginRequiredMixin, AuthorRequiredMixin, DeleteView):
     model = Page
     template_name = 'pages/page_confirm_delete.html'
     success_url = reverse_lazy('pages:page_list')
+
