@@ -2,7 +2,6 @@ body{background:#f5f7fb}
 .navbar-brand{letter-spacing:.3px}
 img.rounded{border-radius:12px}
 
-/* static/css/main.css */
 :root{
   --radius: 12px;
 }
@@ -24,3 +23,4 @@ img.rounded{border-radius:12px}
 img.rounded{
   border-radius: var(--radius) !important;
 }
+
