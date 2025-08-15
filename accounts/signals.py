@@ -1,4 +1,3 @@
-# accounts/signals.py
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib.auth.models import User
@@ -11,6 +10,7 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-    # Si el perfil existe, se guarda; si no existe (caso raro), lo creamos
+    
     Profile.objects.get_or_create(user=instance)
     instance.profile.save()
+
